@@ -157,22 +157,7 @@ body.kanban-background {
   transition: transform 0.3s ease, background-color 0.3s ease;  /* Hover'da animasyon için */
 }
 
-/* Farklı sütunlar için task renkleri */
-#backlog-lane .task {
-  background-color: #FFA500; /* Backlog - Turuncu */
-}
 
-#todo-lane .task {
-  background-color: #1E90FF; /* To do - Mavi */
-}
-
-#in-progress-lane .task {
-  background-color: #32CD32; /* In Progress - Yeşil */
-}
-
-#designed-lane .task {
-  background-color: #FF6347; /* Designed - Kırmızı */
-}
 
 /* Kart üzerine gelince büyütme ve renk değişimi efekti */
 /* Kartların hover durumunda daha belirgin gölge */
@@ -276,5 +261,122 @@ body.dark-mode {
 .dark-mode .task {
   background-color: #555;
   color: #f5f5f5;
+}
+
+/* Genel Buton Stili */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  text-decoration: none; /* Linkleri buton gibi gösterir */
+}
+
+/* Buton Hover Efekti */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Light Mode Butonları */
+.light-mode .btn {
+  background-color: #2a9d8f;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .btn:hover {
+  background-color: #229e80;
+}
+
+/* Dark Mode Butonları */
+.dark-mode .btn {
+  background-color: #444;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .btn:hover {
+  background-color: #555;
+}
+
+/* Özel Butonlar için İkon */
+.btn::before {
+  margin-right: 8px;
+  display: inline-block;
+  transition: content 0.3s;
+}
+
+/* Login Butonu İkonu */
+#login-btn::before {
+  content: '🔒'; /* Kilit simgesi */
+}
+
+/* Register Butonu İkonu */
+#register-btn::before {
+  content: '📝'; /* Defter simgesi */
+}
+
+/* Logout Butonu İkonu */
+#logout-btn::before {
+  content: '🚪'; /* Kapı simgesi */
+}
+
+/* Butonlar */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* Light Mode Butonu */
+.light-mode #toggle-theme-btn {
+  background-color: #2a9d8f;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode #toggle-theme-btn:hover {
+  background-color: #229e80;
+}
+
+/* Dark Mode Butonu */
+.dark-mode #toggle-theme-btn {
+  background-color: #444;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode #toggle-theme-btn:hover {
+  background-color: #555;
+}
+
+/* Buton İkonu */
+#toggle-theme-btn::before {
+  content: '🌞'; /* Güneş simgesi */
+  margin-right: 8px;
+  display: inline-block;
+  transition: content 0.3s;
+}
+
+.dark-mode #toggle-theme-btn::before {
+  content: '🌜'; /* Ay simgesi */
 }
 

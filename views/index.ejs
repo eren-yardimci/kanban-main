@@ -18,15 +18,15 @@
     <div class="header-buttons">
       <% if (!userIN) { %>
         <!-- Kullanıcı giriş yapmamışsa Login ve Register butonları -->
-        <a href="/login" class="btn">Login</a>
-        <a href="/register" class="btn">Register</a>
+        <a href="/login" id="login-btn" class="btn">Login</a>
+        <a href="/register" id="register-btn" class="btn">Register</a>
         <% } else { %>
           <!-- Kullanıcı giriş yapmışsa Logout butonu ve kullanıcı adı -->
-          <a href="/users/logout" class="btn">Logout</a>
+          <a href="/users/logout" id="logout-btn" class="btn">Logout</a>
           <span style="color:red ;">Welcome, <%= userIN.name %>!</span> <!-- Kullanıcı adı gösterimi -->
           <% } %>
             <!-- Tema değiştirme butonu -->
-            <button id="toggle-theme-btn" class="btn">LIGHT BUTTON</button>
+            <button id="toggle-theme-btn" class="btn">THEMA MODE</button>
     </div>
   </div>
 
