@@ -7,7 +7,7 @@ exports.createTask = async (req, res) => {
       return res.status(401).json({ message: 'Lütfen giriş yapın' });
     }
 
-    const { title, description, lane } = req.body;
+    const { title, description, lane, color } = req.body;
 
     if (!title) {
       return res.status(400).json({ message: 'Title is required' });
@@ -16,7 +16,8 @@ exports.createTask = async (req, res) => {
     const task = new Task({
       title,
       description,
-      lane, // Görev lane'ini de kaydet
+      lane,
+      color,
       user: req.session.userID
     });
 

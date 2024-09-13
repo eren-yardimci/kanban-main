@@ -16,6 +16,11 @@ const taskSchema = new Schema({
     enum: ['Backlog', 'To do', 'In Progress', 'Designed'],
     default: 'Backlog'
   },
+  color: {
+    type: String,
+    enum: ['red', 'blue', 'green'], // Renk seçenekleri
+    required: true
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
