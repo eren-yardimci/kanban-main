@@ -1,0 +1,280 @@
+/* Genel Stil Ayarları */
+body.kanban-background {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: #2a9d8f;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Kullanıcı adı ve hoşgeldin mesajı için stil */
+.header span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 10px;
+}
+
+/* Hoşgeldin mesajı */
+.welcome-message {
+  font-size: 20px;
+  color: #f0f0f0;
+  margin-right: 15px;
+  font-weight: 500;
+}
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  color: white;
+  background: #264653;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #1d3557;
+}
+
+/* Kanban Board Stil Ayarları */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+}
+
+.lanes {
+  display: flex;
+  gap: 16px;
+}
+
+.swim-lane {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #264653;
+}
+
+/* Create Task Button */
+#create-task-btn {
+  padding: 12px 32px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 24px 32px;
+  transition: background-color 0.3s ease;
+}
+
+#create-task-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Task Form */
+#task-form-container {
+  padding: 32px;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin: 24px 32px;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#task-form input, #task-form textarea {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  outline: none;
+}
+
+#task-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#task-form button {
+  padding: 12px 32px;
+  border-radius: 4px;
+  border: none;
+  background: #2a9d8f;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#task-form button:hover {
+  background-color: #1a7a60;
+}
+
+/* Task kartları genel stil */
+.task {
+  padding: 20px;  /* İç boşlukları artırdım */
+  margin-bottom: 15px;
+  margin-top: 10px; /* Task ile başlık arasına boşluk ekledik */
+  border-radius: 15px; /* Daha oval kenarlar */
+  font-size: 16px;  /* Yazı boyutunu biraz büyüttüm */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Daha modern bir yazı fontu */
+  font-weight: 500;
+  color: #fff;  /* Yazı rengi beyaz */
+  background-color: #4a90e2;  /* Varsayılan bir mavi arka plan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Hafif bir gölge efekti */
+  transition: transform 0.3s ease, background-color 0.3s ease;  /* Hover'da animasyon için */
+}
+
+/* Farklı sütunlar için task renkleri */
+#backlog-lane .task {
+  background-color: #FFA500; /* Backlog - Turuncu */
+}
+
+#todo-lane .task {
+  background-color: #1E90FF; /* To do - Mavi */
+}
+
+#in-progress-lane .task {
+  background-color: #32CD32; /* In Progress - Yeşil */
+}
+
+#designed-lane .task {
+  background-color: #FF6347; /* Designed - Kırmızı */
+}
+
+/* Kart üzerine gelince büyütme ve renk değişimi efekti */
+/* Kartların hover durumunda daha belirgin gölge */
+.task:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Gölgeyi biraz daha artırdık */
+  background-color: #5a9df3;
+}
+
+/* Görev başlığı */
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Görev açıklaması */
+.task-description {
+  font-size: 10px;
+  font-weight: 350;
+  color: #f0f0f0;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: #e63946;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #d62839;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Drag anında kart animasyonu */
+.is-dragging {
+  opacity: 0.7;
+  transform: rotate(3deg);  /* Kart taşınırken hafif bir eğim efekti */
+  transition: transform 0.2s ease;
+}
+/* Genel temalar */
+body.light-mode {
+  background: #f5f5f5;
+  color: #000;
+}
+
+body.dark-mode {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
+/* Light ve dark mode başlık rengi */
+.light-mode .header {
+  background: #2a9d8f;
+  color: white;
+}
+
+.dark-mode .header {
+  background: #333;
+  color: #fff;
+}
+
+/* Butonlar */
+.light-mode .btn {
+  background: #264653;
+  color: white;
+}
+
+.dark-mode .btn {
+  background: #444;
+  color: white;
+}
+
+/* Swim-lane kartları */
+.light-mode .swim-lane {
+  background: #fff;
+  color: #000;
+}
+
+.dark-mode .swim-lane {
+  background: #333;
+  color: #f5f5f5;
+}
+
+/* Görev kartları */
+.light-mode .task {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.dark-mode .task {
+  background-color: #555;
+  color: #f5f5f5;
+}
+

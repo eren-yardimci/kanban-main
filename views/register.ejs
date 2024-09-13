@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Register | Ludiflex</title>
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Register</header>
+        </div>
+        <form method="POST" action="/users/signup">
+            <div class="input-box">
+                <input type="text" name="name" class="input-field" placeholder="Name" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" class="input-field" placeholder="Email" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            </div>
+            <div class="input-submit">
+                <button type="submit" class="submit-btn" id="submit">Register</button>
+            </div>
+        </form>
+        <div class="sign-up-link">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="drag.js" defer></script>
+    <script src="todo.js" defer></script>
+    <script src="tema.js" defer></script>
+  </head>
+  <body class="kanban-background">
+    <div class="header">
+      <div class="header-buttons">
+        <% if (!userIN) { %>
+          <!-- Kullanıcı giriş yapmamışsa Login ve Register butonları -->
+          <a href="/login" class="btn">Login</a>
+          <a href="/register" class="btn">Register</a>
+      <% } else { %>
+          <!-- Kullanıcı giriş yapmışsa Logout butonu ve kullanıcı adı -->
+          <a href="/users/logout" class="btn">Logout</a>
+          <span style="color:red ;">Welcome, <%= userIN.name %>!</span> <!-- Kullanıcı adı gösterimi -->
+      <% } %>
+      <!-- Tema değiştirme butonu -->
+    <button id="toggle-theme-btn" class="btn">LIGHT BUTTON</button>
+      </div>
+    </div>
+
+    <div class="board"> 
+      <% if (userIN) { %>
+      <button id="create-task-btn">Create New Task</button>
+      <% } %>
+
+      <!-- Görev oluşturma formu -->
+      <div id="task-form-container" class="hidden">
+        <form id="task-form">
+          <input type="text" id="task-title" placeholder="Title" />
+          <textarea id="task-description" placeholder="Description"></textarea>
+          <select id="task-priority">
+            <option value="HIGH">High</option>
+            <option value="MEDIUM" selected>Medium</option>
+            <option value="EASY">Easy</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="lanes">
+        <div class="swim-lane" id="backlog-lane">
+          <h3 class="heading">Backlog</h3>
+        </div>
+        <div class="swim-lane" id="todo-lane">
+          <h3 class="heading">To do</h3>
+        </div>
+        <div class="swim-lane" id="in-progress-lane">
+          <h3 class="heading">In Progress</h3>
+        </div>
+        <div class="swim-lane" id="designed-lane">
+          <h3 class="heading">Designed</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
